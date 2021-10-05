@@ -1,3 +1,12 @@
+header{
+  position: relative;
+}
+header i{
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  font-size: 30px;
+}
 body {
   background-color: rgb(230, 230, 230);
 }
@@ -88,7 +97,7 @@ hr {
     margin: 0 15px;
   }
   nav p{
-    
+
   }
   .news {
     width: 30%;

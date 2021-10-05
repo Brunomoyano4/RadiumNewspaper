@@ -13,6 +13,10 @@ Github Pages: https://brunomoyano4.github.io/RadiumNewspaper/
 - Bruno Moyano <bruno_moyano@hotmail.com>
 
 ---
+## Acknowledgments
+
+* [Font Awesome](https://fontawesome.com)
+---
 
 ##Licences & copyright
 

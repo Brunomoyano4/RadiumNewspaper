@@ -85,6 +85,10 @@ hr {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin: 0 15px;
+  }
+  nav p{
+    
   }
   .news {
     width: 30%;
@@ -101,5 +105,11 @@ hr {
     flex: 0 1 auto;
     align-self: stretch;
     order: 0;
+  }
+  .navhr{
+    margin: 3px;
+  }
+  .final{
+    margin-top: 10px;
   }
 }

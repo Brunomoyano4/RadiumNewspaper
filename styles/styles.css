@@ -121,4 +121,7 @@ hr {
   .final{
     margin-top: 10px;
   }
+  #hiddeni{
+    display: none;
+  }
 }

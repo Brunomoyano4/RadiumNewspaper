@@ -1,44 +1,74 @@
-body{
-    background-color: rgb(230, 230, 230);
+body {
+  background-color: rgb(230, 230, 230);
 }
-.container{
-    width: 90%;
-    margin: 0 auto;
+
+.container {
+  width: 90%;
+  margin: 0 auto;
 }
-main{
+
+main {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+video,
+img {
+  height: auto;
+  width: 100%;
+  padding: 5px 0 5px 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+figcaption {
+  font-size: 0.7rem;
+  font-style: italic;
+}
+
+.justify {
+  text-align: justify;
+}
+
+hr {
+  height: 2px;
+  background-color: black;
+}
+
+@media (min-width: 480px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: flex-start;
     width: 100%;
     height: auto;
     margin-bottom: 20px;
+  }
+  .news {
+    width: 45%;
+    display: flex;
+    flex: 0 1 auto;
+    align-self: auto;
+    order: 0;
+  }
+  .news:nth-child(2n){
+    flex: 0 1 auto;
+    align-self: auto;
+    order: 0;
+  }
 }
-img{
-    height: auto;
-    width: 100%;
-    padding: 5px 0 5px 0;
-}
-video{
-    height: auto;
-    width: 100%;
-    padding: 5px 0 5px 0;
-}
-h2{
-    font-size: 1.5rem;
-    font-family: 'Times New Roman', Times, serif;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-figcaption{
-    font-size: 0.7rem;
-    font-style: italic;
-}
-.justify{
-    text-align: justify;
-}
-hr{
-    height: 2px;
-    background-color: black;
-}
-@media (min-width: 480px){
-    .imgcenter{
-        width: 30%;
-    }
+
+@media (min-width: 768px) {
+  .imgcenter {
+    width: 30%;
+  }
 }

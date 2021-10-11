@@ -14,8 +14,9 @@ header i{
 h1{
     font-size: 3rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
+    text-align: left;
     margin-bottom: 5px;
+    padding-right: 45px;
 }
 .title{
     margin-top: 10px;
@@ -24,5 +25,5 @@ h1{
 header .title{
     font-size: 1rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
+    text-align: left;
 }

@@ -37,6 +37,9 @@ h3{
   border-width: 3px;
   padding-bottom: 10px;
 }
+.news>div{
+  width: 100%;
+}
 .button-12 {
   display: flex;
   flex-direction: column;
@@ -50,7 +53,6 @@ h3{
   (0, 0, 0, 0.12);
   color: #DFDEDF;
   user-select: none;
-  -webkit-user-select: none;
   touch-action: manipulation;
 }
 .button-12:hover {
@@ -64,7 +66,6 @@ h3{
 @media (min-width: 480px) {
   main {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-content: stretch;
@@ -76,14 +77,11 @@ h3{
   h3{
     margin: 10px 0 10px 0;
   }
-  main hr{
-    display: none;
-  }
   .firstline{
     margin-top: 10px;
   }
   .news {
-    width: 45%;
+    width: 100%;
     display: flex;
     flex: 0 1 auto;
     align-self: auto;
@@ -113,6 +111,9 @@ h3{
     background-color: black;
     color: white;
   }
+  main{
+    flex-wrap: nowrap;
+  }
   .title{
     border-bottom-style: none;
   }
@@ -122,24 +123,14 @@ h3{
   header .title{
     text-align: center;
   }
-  .news {
-    width: 30%;
-    display: flex;
-    flex: 0 1 auto;
-    align-self: auto;
-    order: 0;
-    align-self: stretch;
-    border-bottom-style: solid;
-    border-width: 3px;
-    padding-bottom: 10px;
+  .laterals{
+    width: 25%;
+    margin: 0 2%;
   }
   .news:nth-child(2n){
     flex: 0 1 auto;
     align-self: stretch;
     order: 0;
-  }
-  .navhr{
-    margin: 3px;
   }
   .final{
     margin-top: 10px;

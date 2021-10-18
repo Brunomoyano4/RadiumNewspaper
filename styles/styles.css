@@ -25,6 +25,13 @@ h3{
   margin-top: 20px;
   margin-bottom: 10px;
 }
+.orderInput{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 10px 0;
+  font-size: larger;
+}
 .container {
   width: 90%;
   margin: 0 auto;
@@ -113,6 +120,9 @@ h3{
   }
   main{
     flex-wrap: nowrap;
+  }
+  form{
+    margin: 0 15px 0 15px;
   }
   .title{
     border-bottom-style: none;

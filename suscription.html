@@ -1,114 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/fontawesome.min.css">
-  <link rel="stylesheet" href="styles/all.min.css">
-  <link rel="stylesheet" href="styles/reset.css">
-  <link rel="stylesheet" href="styles/header.css">
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="styles/footer.css">
-  <title>Radium Newspaper</title>
-</head>
-
-<body>
-  <div class="container justify">
-    <header>
-      <i class="fas fa-bars" id=hiddeni>
-        </i>
-      <div class="title">
-        <h1>
-          Radium Newspaper
-        </h1>
-        <p>
-          The best newspaper online in the world
-        </p>
-      </div>
-      <nav>
-        <p>
-          <a href="./not-found.html">
-            Today
-          </a>
-        </p>
-        <p>
-          <a href="./not-found.html">
-            Sports
-          </a>
-        </p>
-        <p>
-          <a href="./not-found.html">
-            Science
-          </a>
-        </p>
-        <p>
-          <a href="./not-found.html">
-            Tecnology
-          </a>
-        </p>
-        <p>
-          <a href="./not-found.html">
-            Travel
-          </a>
-        </p>
-      </nav>
-    </header>
-    <main>
-      <form id="suscription" name="suscription" action="#" autocomplete="nope">
-        <fieldset>
-          <legend>
-            Hi:
-          </legend>
-          <div class="orderInput">
-            <label for="fName">Full name:</label>
-            <input type="text" id="fName" name="fName" onblur="validate('fName')" onfocus="focusFunction('fName')" required>
-          </div>
-          <div class="orderInput">
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email" onblur="validate('email')" onfocus="focusFunction('email')" required>
-          </div>
-          <div class="orderInput">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" onblur="validate('password')" onfocus="focusFunction('password')" required> 
-          </div>
-          <div class="orderInput">
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" onblur="validate('age')" onfocus="focusFunction('age')" required>
-          </div>
-          <div class="orderInput">
-            <label for="phoneNumber">Phone number:</label>
-            <input type="number" id="phoneNumber" name="phoneNumber" onblur="validate('phoneNumber')" onfocus="focusFunction('phoneNumber')" required>
-          </div>
-        </fieldset>
-        <fieldset>
-          <div class="orderInput">
-            <label for="adress">Adress:</label>
-            <input type="text" id="adress" name="adress" onblur="validate('adress')" onfocus="focusFunction('adress')" required>
-          </div>
-          <div class="orderInput">
-            <label for="city">City:</label>
-            <input type="text" id="city" name="city" onblur="validate('city')" onfocus="focusFunction('city')" required>
-          </div>
-          <div class="orderInput">
-            <label for="zipCode">Zip code:</label>
-            <input type="number" id="zipCode" name="zipCode" onblur="validate('zipCode')" onfocus="focusFunction('zipCode')" required>
-          </div>
-          <div class="orderInput">
-            <label for="idNumber">Id Number:</label>
-            <input type="number" id="idNumber" name="idNumber" onblur="validate('idNumber')" onfocus="focusFunction('idNumber')" required>
-          </div>
-        </fieldset>
-        <div class="centerbt">
-          <button type="submit" class="button-12" role="submit">
-            Suscribe to newsletter
-          </button>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/fontawesome.min.css">
+    <link rel="stylesheet" href="styles/all.min.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <title>Radium Newspaper</title>
+  </head>
+  <body>
+    <div class="container justify">
+      <header>
+        <i class="fas fa-bars" id=hiddeni>
+          </i>
+        <div class="title">
+          <h1>
+            Radium Newspaper
+          </h1>
+          <p>
+            The best newspaper online in the world
+          </p>
         </div>
-      </form>
-    </main>
-    <footer>
-      <div>
         <nav>
           <p>
             <a href="./not-found.html">
@@ -136,21 +52,165 @@
             </a>
           </p>
         </nav>
-      </div>
-      <div class="final">
-        <p>
-          Radium Newspaper
-        </p>
-        <p>
-          This page is property of Radium Rocket
-        </p>
-        <p>
-          Since 2021
-        </p>
-      </div>
-    </footer>
-  </div>
-</body>
-<script src="script.js"></script>
-
+      </header>
+      <main>
+        <form id="suscription" name="suscription" action="#" autocomplete="nope">
+          <fieldset>
+            <legend>
+              Hi:
+            </legend>
+            <div class="orderInput">
+              <label for="fName">Full name:</label>
+              <input 
+              type="text" 
+              id="fName" 
+              name="fName" 
+              onblur="validate('fName')" 
+              onfocus="focusFunction('fName')" 
+              required
+              >
+            </div>
+            <div class="orderInput">
+              <label for="email">Email:</label>
+              <input 
+              type="text" 
+              id="email" 
+              name="email" 
+              onblur="validate('email')" 
+              onfocus="focusFunction('email')" 
+              required
+              >
+            </div>
+            <div class="orderInput">
+              <label for="password">Password:</label>
+              <input 
+              type="password" 
+              id="password" 
+              name="password" 
+              onblur="validate('password')" 
+              onfocus="focusFunction('password')" 
+              required
+              > 
+            </div>
+            <div class="orderInput">
+              <label for="age">Age:</label>
+              <input 
+              type="number" 
+              id="age" 
+              name="age" 
+              onblur="validate('age')" 
+              onfocus="focusFunction('age')" 
+              required
+              >
+            </div>
+            <div class="orderInput">
+              <label for="phoneNumber">Phone number:</label>
+              <input 
+              type="number" 
+              id="phoneNumber" 
+              name="phoneNumber" 
+              onblur="validate('phoneNumber')" 
+              onfocus="focusFunction('phoneNumber')" 
+              required
+              >
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="orderInput">
+              <label for="adress">Adress:</label>
+              <input 
+              type="text" 
+              id="adress" 
+              name="adress" 
+              onblur="validate('adress')" 
+              onfocus="focusFunction('adress')" 
+              required
+              >
+            </div>
+            <div class="orderInput">
+              <label for="city">City:</label>
+              <input 
+              type="text" 
+              id="city" 
+              name="city" 
+              onblur="validate('city')" 
+              onfocus="focusFunction('city')" 
+              required
+              >
+            </div>
+            <div class="orderInput">
+              <label for="zipCode">Zip code:</label>
+              <input 
+              type="number" 
+              id="zipCode" 
+              name="zipCode" 
+              onblur="validate('zipCode')" 
+              onfocus="focusFunction('zipCode')" 
+              required
+              >
+            </div>
+            <div class="orderInput">
+              <label for="idNumber">Id Number:</label>
+              <input 
+              type="number" 
+              id="idNumber" 
+              name="idNumber" 
+              onblur="validate('idNumber')" 
+              onfocus="focusFunction('idNumber')" 
+              required
+              >
+            </div>
+          </fieldset>
+          <div class="centerbt">
+            <button type="submit" class="button-12" role="submit">
+              Suscribe to newsletter
+            </button>
+          </div>
+        </form>
+      </main>
+      <footer>
+        <div>
+          <nav>
+            <p>
+              <a href="./not-found.html">
+                Today
+              </a>
+            </p>
+            <p>
+              <a href="./not-found.html">
+                Sports
+              </a>
+            </p>
+            <p>
+              <a href="./not-found.html">
+                Science
+              </a>
+            </p>
+            <p>
+              <a href="./not-found.html">
+                Tecnology
+              </a>
+            </p>
+            <p>
+              <a href="./not-found.html">
+                Travel
+              </a>
+            </p>
+          </nav>
+        </div>
+        <div class="final">
+          <p>
+            Radium Newspaper
+          </p>
+          <p>
+            This page is property of Radium Rocket
+          </p>
+          <p>
+            Since 2021
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script src="script.js"></script>
 </html>

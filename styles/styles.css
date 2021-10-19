@@ -84,6 +84,12 @@ h3{
   h3{
     margin: 10px 0 10px 0;
   }
+  form{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 100%;
+  }
   .firstline{
     margin-top: 10px;
   }

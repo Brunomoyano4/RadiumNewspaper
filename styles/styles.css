@@ -135,10 +135,6 @@ h3{
     height: 100px;
     width: 100%;
   }
-  /* fieldset{
-    height: auto;
-    width: 20%;
-  } */
   .regForm{
     display: flex;
     flex-wrap: wrap;

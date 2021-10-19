@@ -99,5 +99,10 @@ document.getElementById('suscription').addEventListener('submit', function (e) {
   inputs.map(input =>{
     focusFunction(input);
   })
+  document.getElementById('titleName').innerHTML='';
 });
 
+var inputName = document.getElementById('fName');
+inputName.oninput = function(){
+    document.getElementById('titleName').innerHTML = inputName.value;
+}

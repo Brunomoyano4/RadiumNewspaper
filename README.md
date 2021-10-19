@@ -2,7 +2,8 @@
 
 **Version 1.0.0**
 
-Cover page of newspaper
+- Cover page of newspaper
+- Suscription page
 
 Github Pages: https://brunomoyano4.github.io/RadiumNewspaper/
 

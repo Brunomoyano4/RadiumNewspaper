@@ -55,117 +55,119 @@
       </header>
       <main>
         <form id="suscription" name="suscription" action="#" autocomplete="nope">
-          <fieldset>
-            <legend>
-              Hi:
-            </legend>
-            <div class="orderInput">
-              <label for="fName">Full name:</label>
-              <input 
-              type="text" 
-              id="fName" 
-              name="fName" 
-              onblur="validate('fName')" 
-              onfocus="focusFunction('fName')" 
-              required
-              >
-            </div>
-            <div class="orderInput">
-              <label for="email">Email:</label>
-              <input 
-              type="text" 
-              id="email" 
-              name="email" 
-              onblur="validate('email')" 
-              onfocus="focusFunction('email')" 
-              required
-              >
-            </div>
-            <div class="orderInput">
-              <label for="password">Password:</label>
-              <input 
-              type="password" 
-              id="password" 
-              name="password" 
-              onblur="validate('password')" 
-              onfocus="focusFunction('password')" 
-              required
-              > 
-            </div>
-            <div class="orderInput">
-              <label for="age">Age:</label>
-              <input 
-              type="number" 
-              id="age" 
-              name="age" 
-              onblur="validate('age')" 
-              onfocus="focusFunction('age')" 
-              required
-              >
-            </div>
-            <div class="orderInput">
-              <label for="phoneNumber">Phone number:</label>
-              <input 
-              type="number" 
-              id="phoneNumber" 
-              name="phoneNumber" 
-              onblur="validate('phoneNumber')" 
-              onfocus="focusFunction('phoneNumber')" 
-              required
-              >
-            </div>
-          </fieldset>
-          <fieldset>
-            <div class="orderInput">
-              <label for="adress">Adress:</label>
-              <input 
-              type="text" 
-              id="adress" 
-              name="adress" 
-              onblur="validate('adress')" 
-              onfocus="focusFunction('adress')" 
-              required
-              >
-            </div>
-            <div class="orderInput">
-              <label for="city">City:</label>
-              <input 
-              type="text" 
-              id="city" 
-              name="city" 
-              onblur="validate('city')" 
-              onfocus="focusFunction('city')" 
-              required
-              >
-            </div>
-            <div class="orderInput">
-              <label for="zipCode">Zip code:</label>
-              <input 
-              type="number" 
-              id="zipCode" 
-              name="zipCode" 
-              onblur="validate('zipCode')" 
-              onfocus="focusFunction('zipCode')" 
-              required
-              >
-            </div>
-            <div class="orderInput">
-              <label for="idNumber">Id Number:</label>
-              <input 
-              type="number" 
-              id="idNumber" 
-              name="idNumber" 
-              onblur="validate('idNumber')" 
-              onfocus="focusFunction('idNumber')" 
-              required
-              >
-            </div>
-          </fieldset>
-          <div class="centerbt">
-            <button type="submit" class="button-12" role="submit">
-              Suscribe to newsletter
-            </button>
+          <legend>
+            Hi:
+          </legend>
+          <div class="formContainer">
+            <fieldset class="regForm">
+              <div class="orderInput">
+                <label for="fName">Full name:</label>
+                <input 
+                type="text" 
+                id="fName" 
+                name="fName" 
+                onblur="validate('fName')" 
+                onfocus="focusFunction('fName')" 
+                required
+                >
+              </div>
+              <div class="orderInput">
+                <label for="email">Email:</label>
+                <input 
+                type="text" 
+                id="email" 
+                name="email" 
+                onblur="validate('email')" 
+                onfocus="focusFunction('email')" 
+                required
+                >
+              </div>
+              <div class="orderInput">
+                <label for="password">Password:</label>
+                <input 
+                type="password" 
+                id="password" 
+                name="password" 
+                onblur="validate('password')" 
+                onfocus="focusFunction('password')" 
+                required
+                > 
+              </div>
+              <div class="orderInput">
+                <label for="age">Age:</label>
+                <input 
+                type="number" 
+                id="age" 
+                name="age" 
+                onblur="validate('age')" 
+                onfocus="focusFunction('age')" 
+                required
+                >
+              </div>
+              <div class="orderInput">
+                <label for="phoneNumber">Phone number:</label>
+                <input 
+                type="number" 
+                id="phoneNumber" 
+                name="phoneNumber" 
+                onblur="validate('phoneNumber')" 
+                onfocus="focusFunction('phoneNumber')" 
+                required
+                >
+              </div>
+            </fieldset>
+            <fieldset class="regForm">
+              <div class="orderInput">
+                <label for="adress">Adress:</label>
+                <input 
+                type="text" 
+                id="adress" 
+                name="adress" 
+                onblur="validate('adress')" 
+                onfocus="focusFunction('adress')" 
+                required
+                >
+              </div>
+              <div class="orderInput">
+                <label for="city">City:</label>
+                <input 
+                type="text" 
+                id="city" 
+                name="city" 
+                onblur="validate('city')" 
+                onfocus="focusFunction('city')" 
+                required
+                >
+              </div>
+              <div class="orderInput">
+                <label for="zipCode">Zip code:</label>
+                <input 
+                type="number" 
+                id="zipCode" 
+                name="zipCode" 
+                onblur="validate('zipCode')" 
+                onfocus="focusFunction('zipCode')" 
+                required
+                >
+              </div>
+              <div class="orderInput">
+                <label for="idNumber">Id Number:</label>
+                <input 
+                type="number" 
+                id="idNumber" 
+                name="idNumber" 
+                onblur="validate('idNumber')" 
+                onfocus="focusFunction('idNumber')" 
+                required
+                >
+              </div>
+            </fieldset>
           </div>
+            <div class="centerbt">
+              <button type="submit" class="button-12" role="submit">
+                Suscribe to newsletter
+              </button>
+            </div>
         </form>
       </main>
       <footer>

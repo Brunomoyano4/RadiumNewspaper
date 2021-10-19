@@ -1,5 +1,3 @@
-
-
 function validate(elementId) {
   const input = document.getElementById(elementId);
   let validator;
@@ -89,11 +87,14 @@ document.getElementById('suscription').addEventListener('submit', function (e) {
       data.append(input, document.getElementById(input).value);
     }
   })
-
   let result = '';
   for (const [key, value] of data.entries()) {
     result += `${key} : ${value}\n`;
   }
   alert(result);
+  this.reset();
+  inputs.map(input =>{
+    focusFunction(input);
+  })
 });
 

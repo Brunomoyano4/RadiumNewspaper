@@ -2,6 +2,7 @@ function validate(elementId) {
   const input = document.getElementById(elementId);
   let validator;
   let errorText;
+  let result;
   const error = document.createElement('p');
   switch (elementId) {
     case 'fName':
@@ -17,8 +18,10 @@ function validate(elementId) {
       errorText = 'Password must contain at least 8 alphanumeric characters';
       break;
     case 'age':
-      result = (input.value >= 18);
-      errorText = 'Must be 18 or older';
+      if(input.value % 1 == 0){
+        result = (input.value >= 18);
+      }
+      errorText = 'Must be 18 or older and the number must be integer';
       break;
     case 'phoneNumber':
       validator = /^\D*(?:\d\D*){7,}$/;

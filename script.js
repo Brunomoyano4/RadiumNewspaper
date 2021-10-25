@@ -131,13 +131,22 @@ document.getElementById('suscription').addEventListener('submit',function (e) {
   const URL= API_URL + query
   fetch(URL)
     .then((response)=>response.json())
-    .then((response)=>modalView(response))
-  .catch ((error)=>modalView(error))
+    .then((response)=>modalView(response,'OK'))
+  .catch ((error)=>modalView(error,'ERROR'))
 });
 
-function modalView(message,status){
+function modalView(response,message){
+  if(message = 'OK'){
+    document.getElementById('messageContent').innerText = 'La llamada ha sido realizada correctamente'
+  }else{
+    document.getElementById('messageContent').innerText = 'La llamada presentó un error'
+  }
   var modal = document.getElementById("modalSubmit");
+  var span = document.getElementsByClassName("close")[0];
   modal.style.display = "block"
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
   window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
@@ -145,30 +154,3 @@ function modalView(message,status){
   }
 }
 
-
-  // var modal = document.getElementById("modalSubmit");
-
-  // // Get the button that opens the modal
-  // var btn = getElementById('mybtn')
-  
-  // // Get the <span> element that closes the modal
-  // var span = document.getElementsByClassName("close")[0];
-  
-  // // When the user clicks the button, open the modal 
-  // // btn.onclick = function() {
-  // //   modal.style.display = "block";
-  // // }
-  // document.getElementById('suscription').addEventListener('submit',function() {
-  //   document.getElementById("modalSubmit").style.display = "block";
-  // })
-  // // When the user clicks on <span> (x), close the modal
-  // span.onclick = function() {
-  //   document.getElementById("modalSubmit").style.display = "none";
-  // }
-  
-  // // When the user clicks anywhere outside of the modal, close it
-  // window.onclick = function(event) {
-  //   if (event.target == modal) {
-  //     modal.style.display = "none";
-  //   }
-  // }

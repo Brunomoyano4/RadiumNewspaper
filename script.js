@@ -82,32 +82,6 @@ function focusFunction(elementId) {
   }
 }
 
-// document.getElementById('suscription').addEventListener('submit', function (e) {
-//   e.preventDefault();
-//   let inputs = ['fName', 'email', 'password', 'age', 'phoneNumber', 'adress', 'city', 'zipCode', 'idNumber'];
-//   var data = new FormData();
-//   inputs.map(input => {
-//     const error = document.getElementById(input).nextSibling;
-//     if (error) {
-//       data.append(input, error.textContent);
-//     } else {
-//       data.append(input, document.getElementById(input).value);
-//     }
-//   })
-//   console.log(data.entries())
-//   let result = '';
-//   for (const [key, value] of data.entries()) {
-//     result += `${key} : ${value}\n`;
-//   }
-//   alert(result);
-//   this.reset();
-//   inputs.map(input =>{
-//     focusFunction(input);
-//   })
-//   document.getElementById('titleName').innerHTML='';
-// });
-
-
 var inputName = document.getElementById('name');
 inputName.oninput = function(){
   document.getElementById('titleName').innerHTML = inputName.value;
@@ -136,10 +110,19 @@ document.getElementById('suscription').addEventListener('submit',function (e) {
 });
 
 function modalView(response,message){
-  if(message = 'OK'){
-    document.getElementById('messageContent').innerText = 'La llamada ha sido realizada correctamente'
+  if(message === 'OK'){
+    console.log(Object.keys(response))
+    const jsonResponse = Object.keys(response)
+    let messageResponse = '<ul>';
+    jsonResponse.map(function(key, index) {
+      const val = response[key];
+      messageResponse += `<li>${key}: ${val}</li>`;
+    })
+    messageResponse += '</ul>';
+    document.getElementById('messageContent').innerHTML =`<p>La llamada se realizo correctamente</p>
+    ${messageResponse}`
   }else{
-    document.getElementById('messageContent').innerText = 'La llamada presentó un error'
+    document.getElementById('messageContent').innerHTML = 'La llamada presentó un error'
   }
   var modal = document.getElementById("modalSubmit");
   var span = document.getElementsByClassName("close")[0];
@@ -153,4 +136,3 @@ function modalView(response,message){
     }
   }
 }
-

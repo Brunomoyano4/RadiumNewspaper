@@ -5,7 +5,7 @@ function validate(elementId) {
   let result;
   const error = document.createElement('p');
   switch (elementId) {
-    case 'fName':
+    case 'name':
       validator = /^(?=.*[a-zA-Z]\s).{6,}$/;
       errorText = 'Name must have at least 6 letters and a space in the middle';
       break;
@@ -50,20 +50,24 @@ function validate(elementId) {
     const result = validator.test(input.value);
     if (result) {
       input.style.borderColor = 'green';
+      input.classList.remove('disabled');
     } else {
       input.style.borderColor = 'red';
       input.parentNode.insertBefore(error, input.nextSibling);
       error.style.color = 'red';
       error.innerHTML = errorText;
+      input.classList.add('disabled');
     }
   } else {
     if (result) {
       input.style.borderColor = 'green';
+      input.classList.remove('disabled');
     } else {
       input.style.borderColor = 'red';
       input.parentNode.insertBefore(error, input.nextSibling);
       error.style.color = 'red';
       error.innerHTML = errorText;
+      input.classList.add('disabled');
     }
   }
 
@@ -78,31 +82,93 @@ function focusFunction(elementId) {
   }
 }
 
-document.getElementById('suscription').addEventListener('submit', function (e) {
+// document.getElementById('suscription').addEventListener('submit', function (e) {
+//   e.preventDefault();
+//   let inputs = ['fName', 'email', 'password', 'age', 'phoneNumber', 'adress', 'city', 'zipCode', 'idNumber'];
+//   var data = new FormData();
+//   inputs.map(input => {
+//     const error = document.getElementById(input).nextSibling;
+//     if (error) {
+//       data.append(input, error.textContent);
+//     } else {
+//       data.append(input, document.getElementById(input).value);
+//     }
+//   })
+//   console.log(data.entries())
+//   let result = '';
+//   for (const [key, value] of data.entries()) {
+//     result += `${key} : ${value}\n`;
+//   }
+//   alert(result);
+//   this.reset();
+//   inputs.map(input =>{
+//     focusFunction(input);
+//   })
+//   document.getElementById('titleName').innerHTML='';
+// });
+
+
+var inputName = document.getElementById('name');
+inputName.oninput = function(){
+  document.getElementById('titleName').innerHTML = inputName.value;
+}
+
+const API_URL = 'http://curso-dev-2021.herokuapp.com/newsletter?'
+
+document.getElementById('suscription').addEventListener('submit',function (e) {
   e.preventDefault();
-  let inputs = ['fName', 'email', 'password', 'age', 'phoneNumber', 'adress', 'city', 'zipCode', 'idNumber'];
-  var data = new FormData();
-  inputs.map(input => {
-    const error = document.getElementById(input).nextSibling;
-    if (error) {
-      data.append(input, error.textContent);
-    } else {
-      data.append(input, document.getElementById(input).value);
-    }
-  })
-  let result = '';
-  for (const [key, value] of data.entries()) {
-    result += `${key} : ${value}\n`;
+  const formElement = document.getElementById('suscription');
+  const disabledInputs = formElement.querySelectorAll('.disabled')
+  if (disabledInputs.length > 0){
+    alert('Hay errores en el formulario')
+    return
   }
-  alert(result);
-  this.reset();
-  inputs.map(input =>{
-    focusFunction(input);
-  })
-  document.getElementById('titleName').innerHTML='';
+  const formEntries = new FormData(formElement).entries();
+  const formData = Object.assign(...Array.from(formEntries, ([name, value]) => ({[name]: value})));
+  let query = Object.keys(formData)
+    .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(formData[k]))
+    .join('&');
+  const URL= API_URL + query
+  fetch(URL)
+    .then((response)=>response.json())
+    .then((response)=>modalView(response))
+  .catch ((error)=>modalView(error))
 });
 
-var inputName = document.getElementById('fName');
-inputName.oninput = function(){
-    document.getElementById('titleName').innerHTML = inputName.value;
+function modalView(message,status){
+  var modal = document.getElementById("modalSubmit");
+  modal.style.display = "block"
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
 }
+
+
+  // var modal = document.getElementById("modalSubmit");
+
+  // // Get the button that opens the modal
+  // var btn = getElementById('mybtn')
+  
+  // // Get the <span> element that closes the modal
+  // var span = document.getElementsByClassName("close")[0];
+  
+  // // When the user clicks the button, open the modal 
+  // // btn.onclick = function() {
+  // //   modal.style.display = "block";
+  // // }
+  // document.getElementById('suscription').addEventListener('submit',function() {
+  //   document.getElementById("modalSubmit").style.display = "block";
+  // })
+  // // When the user clicks on <span> (x), close the modal
+  // span.onclick = function() {
+  //   document.getElementById("modalSubmit").style.display = "none";
+  // }
+  
+  // // When the user clicks anywhere outside of the modal, close it
+  // window.onclick = function(event) {
+  //   if (event.target == modal) {
+  //     modal.style.display = "none";
+  //   }
+  // }

@@ -1,3 +1,15 @@
+window.onload = function() {
+  const formData = localStorage.getItem('formData')
+  loadForm(formData)
+};
+
+function loadForm(formData) {
+  if(!formData) return
+  const jsonFormData = JSON.parse(formData)
+  const jsonKeys = Object.keys(jsonFormData)
+  jsonKeys.map((key) => document.getElementById(key).value = jsonFormData[key])
+};
+
 function validate(elementId) {
   const input = document.getElementById(elementId);
   let validator;
@@ -87,7 +99,7 @@ inputName.oninput = function(){
   document.getElementById('titleName').innerHTML = inputName.value;
 }
 
-const API_URL = 'http://curso-dev-2021.herokuapp.com/newsletter?'
+const API_URL = 'https://curso-dev-2021.herokuapp.com/newsletter?'
 
 document.getElementById('suscription').addEventListener('submit',function (e) {
   e.preventDefault();
@@ -105,13 +117,15 @@ document.getElementById('suscription').addEventListener('submit',function (e) {
   const URL= API_URL + query
   fetch(URL)
     .then((response)=>response.json())
-    .then((response)=>modalView(response,'OK'))
+    .then((response)=> { 
+      localStorage.setItem('formData', JSON.stringify(response))
+      modalView(response,'OK');
+    })
   .catch ((error)=>modalView(error,'ERROR'))
 });
 
 function modalView(response,message){
   if(message === 'OK'){
-    console.log(Object.keys(response))
     const jsonResponse = Object.keys(response)
     let messageResponse = '<ul>';
     jsonResponse.map(function(key, index) {

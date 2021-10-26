@@ -82,7 +82,6 @@ function validate(elementId) {
       input.classList.add('disabled');
     }
   }
-
 };
 
 function focusFunction(elementId) {

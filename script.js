@@ -1,6 +1,36 @@
+const API_URL = 'https://curso-dev-2021.herokuapp.com/newsletter?'
+
 window.onload = function() {
   const formData = localStorage.getItem('formData')
   loadForm(formData)
+
+  var inputName = document.getElementById('name');
+  inputName.oninput = function(){
+    document.getElementById('titleName').innerHTML = inputName.value;
+  }
+
+  document.getElementById('suscription').addEventListener('submit',function (e) {
+    e.preventDefault();
+    const formElement = document.getElementById('suscription');
+    const disabledInputs = formElement.querySelectorAll('.disabled')
+    if (disabledInputs.length > 0){
+      alert('Hay errores en el formulario')
+      return
+    }
+    const formEntries = new FormData(formElement).entries();
+    const formData = Object.assign(...Array.from(formEntries, ([name, value]) => ({[name]: value})));
+    let query = Object.keys(formData)
+      .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(formData[k]))
+      .join('&');
+    const URL= API_URL + query
+    fetch(URL)
+      .then((response)=>response.json())
+      .then((response)=> { 
+        localStorage.setItem('formData', JSON.stringify(response))
+        modalView(response,'OK');
+      })
+    .catch ((error)=>modalView(error,'ERROR'))
+  });
 };
 
 function loadForm(formData) {
@@ -92,36 +122,6 @@ function focusFunction(elementId) {
     error.remove();
   }
 }
-
-var inputName = document.getElementById('name');
-inputName.oninput = function(){
-  document.getElementById('titleName').innerHTML = inputName.value;
-}
-
-const API_URL = 'https://curso-dev-2021.herokuapp.com/newsletter?'
-
-document.getElementById('suscription').addEventListener('submit',function (e) {
-  e.preventDefault();
-  const formElement = document.getElementById('suscription');
-  const disabledInputs = formElement.querySelectorAll('.disabled')
-  if (disabledInputs.length > 0){
-    alert('Hay errores en el formulario')
-    return
-  }
-  const formEntries = new FormData(formElement).entries();
-  const formData = Object.assign(...Array.from(formEntries, ([name, value]) => ({[name]: value})));
-  let query = Object.keys(formData)
-    .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(formData[k]))
-    .join('&');
-  const URL= API_URL + query
-  fetch(URL)
-    .then((response)=>response.json())
-    .then((response)=> { 
-      localStorage.setItem('formData', JSON.stringify(response))
-      modalView(response,'OK');
-    })
-  .catch ((error)=>modalView(error,'ERROR'))
-});
 
 function modalView(response,message){
   if(message === 'OK'){
